@@ -1,10 +1,12 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
 #include "Utility.h"
+#include <cassert>
 
-DragonSlayer::DragonSlayer(std::string n, int hp, int armor) : name(n), Character(hp, armor, 2)
+DragonSlayer::DragonSlayer(std::string n, int hp, int armor) : Character(hp, armor, 4), name(n) //why does the order matter?
 {
-    
+    helpfulItems = makeHelpfulItems(2);
+    defensiveItems = makeDefensiveItems(1);
 }
 
 const std::string& DragonSlayer::getName()
