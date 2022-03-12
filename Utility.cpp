@@ -63,10 +63,7 @@ void useDefensiveItem(Character* character, Item& item)
     {
         ch_dragSlayer->boostArmor( item.getBoost() * 1.5 );
     }
-    else if( auto* ch_dragon = dynamic_cast<Dragon*>(character) )
-    {
-        //dragons don't need defensive items
-    }  
+    
 }
 void useHelpfulItem(Character* character, Item* item)
 {
@@ -99,11 +96,12 @@ void useAttackItem(Character* character, Item* item)
     }
     else if( auto* ch_dragSlayer = dynamic_cast<DragonSlayer*>(character))
     {
-        assert(false);
+        //assert(false);
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so their attack item should boost their attack damage by a factor of 10
         //this means you need to GET the attack damage, multiply it by the item's boost, and BOOST the attackDamage with that multiplied value.  
         //check Character.h for available member functions you can use.
+        ch_dragSlayer->boostAttackDamage(item->getBoost() * ch_dragSlayer->getAttackDamage());
     }
     else if( auto* ch_dragon = dynamic_cast<Dragon*>(character) )
     {

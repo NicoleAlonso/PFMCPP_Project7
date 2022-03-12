@@ -4,8 +4,8 @@
 #include <vector>
 #include <memory>
 #include <iostream>
-
 #include "Item.h"
+#include "Utility.h"
 
 struct Character
 {
@@ -24,7 +24,6 @@ struct Character
     void defend();
     
     void help( Character& other );
-    
     int takeDamage(int damage);
     
     int getHP() const { return hitPoints; }
@@ -65,4 +64,5 @@ private:
     std::unique_ptr<int> initialHitPoints, initialArmorLevel, initialAttackDamage;
     
     void attackInternal(Character& other);
+    void defeatedOther(int& initialVal, int& currentVal);
 };

@@ -2,7 +2,6 @@
 
 #include "Item.h"
 
-
 struct HelpfulItem : Item
 {
     HelpfulItem() : Item("helpful item", 2) { }
