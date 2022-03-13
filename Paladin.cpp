@@ -12,11 +12,6 @@ const std::string& Paladin::getName()
     return name;
 }
 
-void Paladin::attack(Character& other)
-{
-    Character::attack(other);
-}
-
 std::string Paladin::getStats()
 {
     return getCharacterStats(this);

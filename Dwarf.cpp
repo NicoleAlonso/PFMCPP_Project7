@@ -12,11 +12,6 @@ const std::string& Dwarf::getName()
     return name;
 }
 
-void Dwarf::attack(Character& other)
-{
-    Character::attack(other);
-}
-
 std::string Dwarf::getStats()
 {
     return getCharacterStats(this);
